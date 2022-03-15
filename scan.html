@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .box{
+        color: cyan;
+        height: 10rem;
+        width: 8rem;
+        font-size: 2rem;
+        transition: 0.5s;
+
+        position: relative;
+        padding: 0.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        
+    }
+    .box p{
+        -webkit-text-stroke: 0.15rem rgba(21, 208, 255, 0.5);
+        word-spacing: 00.15rem;
+        text-shadow:  0 0 12px rgb(94, 217, 255), 0 0 16px rgb(94, 217, 255), 0 0 20px rgb(94, 217, 255), 0 0 24px rgb(94, 217, 255), 0 0 28px #fff;
+        
+        border-radius: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .box::before{
+        position: absolute;
+        content: "";
+        height: 10rem;
+        width: 8rem;
+        border-top: 0.15rem cyan solid ;
+       background-color: rgba(255, 255, 255, 0.15);
+        z-index: 1000;
+        animation: moves 1.5s infinite alternate ease-in-out;
+        backdrop-filter:brightness(50%);
+    }
+    @keyframes moves {
+        100%{
+            transform: translateY(10rem);
+            
+        }
+        
+    }
+    
+</style>
+<body>
+    <div class="box">
+       <p>Hello</p>
+    </div>
+</body>
+</html>
